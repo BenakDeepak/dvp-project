@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .photo-section {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 2px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius */
+  }
+
+  .photo-section img {
+    width: calc(100% -35%); /* Reduce image size and consider border width */
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Adjust border radius */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .description {
+    display: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .open-close {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #007bff;
+    display: block;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="photo-section" id="photo1" onclick="toggleDescription('photo1')">
+    <img src="./1.png" alt="Photo 1">
+    <div class="description">
+      <p>The graph clearly shows that there was peek time which is 2000-2010  in which many colleges started 
+        by which many indians got an oppurtunity to study and the related fields of engineering and other degree 
+        colleges were important to enhance the future of the country.This graph clearly states that 
+        the peek has been reduced in present which implies stablity.</p>
+      <p>The importance of this is reflected towards economic and social condion too as education is a 
+        need of the future. 
+      </p>
+    </div>
+    <div class="open-close">Open</div>
+  </div>
+
+  <div class="photo-section" id="photo2" onclick="toggleDescription('photo2')">
+    <img src="./2.png" alt="Photo 2">
+    <div class="description">
+      <p>Description of Photo 2 here...</p>
+    </div>
+    <div class="open-close">Open</div>
+  </div>
+
+
+  <div class="photo-section" id="photo3" onclick="toggleDescription('photo3')">
+    <img src="./6.png" alt="Photo 3">
+    <div class="description">
+      <p>Description of Photo 3 here...</p>
+    </div>
+    <div class="open-close" >Open</div>
+  </div>
+  <div class="photo-section" id="photo4" onclick="toggleDescription('photo4')">
+    <img src="image4.png" alt="Photo 4">
+    <div class="description">
+      <p>Description of Photo 1 here...</p>
+    </div>
+    <div class="open-close" >Open</div>
+  </div>
+  <div class="photo-section1" id="photo5"5 onclick="toggleDescription('photo5')">
+    <img src="./4.png" alt="Photo 5">
+    <div class="description">
+      <p>Description of Photo 2 here...</p>
+    </div>
+    <div class="open-close">Open</div>
+  </div>
+
+
+  <div class="photo-section1" id="photo6" onclick="toggleDescription('photo6')">
+    <img src="./3.png" alt="Photo 6">
+    <div class="description">
+      <p>Description of Photo 3 here...</p>
+    </div>
+    <div class="open-close" >Open</div>
+  </div>
+  <div class="photo-section1" id="photo7" onclick="toggleDescription('photo7')">
+    <img src="./5.png" alt="Photo 7">
+    <div class="description">
+      <p>Description of Photo 1 here...</p>
+    </div>
+    <div class="open-close" >Open</div>
+  </div>
+
+</div>
+
+<script>
+  function toggleDescription(photoId) {
+    var description = document.querySelector(`#${photoId} .description`);
+    var openClose = document.querySelector(`#${photoId} .open-close`);
+    
+    if (description.style.display === "none") {
+      description.style.display = "block";
+      openClose.textContent = "Close";
+    } else {
+      description.style.display = "none";
+      openClose.textContent = "Open";
+    }
+  }
+</script>
+
+</body>
+</html>
